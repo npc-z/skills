@@ -1,22 +1,23 @@
 ---
 name: 20-hour-plan
-description: "Find the core 20% of any topic that unlocks 80% of results, structured into 10 study sessions of 2 hours each. Use when the user wants a focused study plan."
+description: "Find the core 20% of any topic that unlocks 80% of results, structured into 10 sessions of 2 hours each. Use when the user wants a focused study plan."
 disable-model-invocation: true
 argument-hint: "What topic should be planned into 20 hours?"
 ---
 
 # Learn Anything in 20 Hours
 
-Most subjects have a small set of ideas that unlock everything else.
+This skill finds the core 20% of a topic, then structures it into 10 sessions of 2 hours each.
 
-This skill finds that core 20% first, then turns it into a 10-session, 2-hour-per-session learning plan.
+## Workflow
 
-## Principles
+1. Ask what topic to plan (if not provided)
+2. Ask about the user's available time and goals
+3. Identify the core 20% — the concepts that unlock the rest
+4. Structure it into 10 sequential sessions, each building on the previous
+5. For each session, write: objective, key concepts (3-5), exercises, resources, review questions
 
-- **Core 20% first** — find what unlocks the rest
-- **10 sessions, 2 hours each** — structured and actionable
-- **Each session has**: objective, concepts, exercises, resources, review questions
-- **Sequential build** — each session depends on the previous
+**Completion**: 10 sessions are written, each with a clear objective, 3-5 key concepts, at least one exercise, and 3 review questions. Every session depends on the previous one.
 
 ## Output Format
 
@@ -38,11 +39,3 @@ This skill finds that core 20% first, then turns it into a 10-session, 2-hour-pe
 ### Session 2: [Title]
 ...
 ```
-
-## Workflow
-
-1. Ask what topic to plan (if not provided)
-2. Ask about the user's available time and goals
-3. Identify the core 20% of the topic
-4. Structure it into 10 sequential sessions
-5. For each session, write the objective, concepts, exercises, resources, and review questions

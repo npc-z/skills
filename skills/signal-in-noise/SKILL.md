@@ -1,22 +1,23 @@
 ---
 name: signal-in-noise
-description: "Find the 5 highest-leverage resources for any topic — books, videos, courses, communities. Stop collecting, start using. Use when the user needs to pick the right learning resources before starting."
+description: "Find the 5 highest-leverage resources for any topic. Stop collecting, start using. Use when the user needs to pick learning resources before starting."
 disable-model-invocation: true
 argument-hint: "What topic do you need resources for?"
 ---
 
 # Find the Signal in the Noise
 
-There are thousands of resources for every topic. Most people waste time collecting instead of learning.
+Separate signal from noise: find the 5 resources that matter and build a path using only those 5.
 
-This skill finds the 5 that matter and builds a path using only those 5.
+## Workflow
 
-## Principles
+1. Ask what topic the user wants to learn
+2. Ask about their current level and goals
+3. Find and rank 5 resources — each tied to a specific learning goal
+4. Build a 7-day path using only those 5
+5. State clearly: "Use these 5. Ignore everything else until you're done."
 
-- **Quality over quantity** — 5 resources, not 50
-- **Ranked by leverage** — highest impact first
-- **Actionable** — each resource tied to a specific learning goal
-- **No filler** — if it doesn't move the needle, it's noise
+**Completion**: The user has 5 ranked resources with links and a 7-day path. Each resource has a stated learning goal.
 
 ## Output Format
 
@@ -26,7 +27,7 @@ This skill finds the 5 that matter and builds a path using only those 5.
 ## The 5
 
 1. **[Title]** (type: book/video/course/community)
-   - Why: [one sentence on why this is the best use of time]
+   - Signal: [one sentence on why this is the highest-leverage pick]
    - What you'll learn: [specific outcome]
    - Link: [URL or access method]
 
@@ -40,11 +41,3 @@ This skill finds the 5 that matter and builds a path using only those 5.
 | 2 | #1 | [specific topic] |
 | ... | ... | ... |
 ```
-
-## Workflow
-
-1. Ask what topic the user wants to learn
-2. Ask about their current level and goals
-3. Find and rank 5 resources
-4. Build a 7-day path using only those 5
-5. Tell them: "Use these 5. Ignore everything else until you're done."

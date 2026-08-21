@@ -11,9 +11,7 @@ A structured learning system. Random Q&A produces random learning — real learn
 
 This is a router. It has no workflow of its own. It dispatches to other skills.
 
-## The System
-
-### Phase 1: Plan
+## Phase 1: Plan
 
 | Step | Skill | What it does |
 |------|-------|--------------|
@@ -21,7 +19,7 @@ This is a router. It has no workflow of its own. It dispatches to other skills.
 | 2 | `learning-ladder` | Map 5 difficulty levels with milestones |
 | 3 | `20-hour-plan` | Core 20% in 10 sessions × 2 hours |
 
-### Phase 2: Practice
+## Phase 2: Practice
 
 | Need | Skill | When to use |
 |------|-------|-------------|
@@ -31,8 +29,6 @@ This is a router. It has no workflow of its own. It dispatches to other skills.
 
 ## How to Use
 
-Tell the user what you want to learn. Then:
-
 1. Ask: "Where do you want to start?"
 2. Suggest the appropriate skill based on their answer:
    - "I'm just starting" → `signal-in-noise` → `learning-ladder` → `20-hour-plan`
@@ -41,27 +37,8 @@ Tell the user what you want to learn. Then:
    - "I think I get it, but not sure" → `feynman-loop`
 3. Let the user pick, or recommend the next logical step
 
+**Completion**: The user has selected a skill and the router has dispatched.
+
 ## Recommended Flow
 
-```
-signal-in-noise → learning-ladder → 20-hour-plan
-                                        ↓
-                              ┌─────────────────┐
-                              │  study session   │
-                              └─────────────────┘
-                                        ↓
-                              quiz-me / cheat-sheet / feynman-loop
-                                        ↓
-                              ┌─────────────────┐
-                              │  next session    │
-                              └─────────────────┘
-```
-
-## Key Principles
-
-- **Path over answers** — always know what to learn next
-- **Test over reading** — active recall beats passive review
-- **Compression over volume** — one page beats re-reading everything
-- **Feedback over guessing** — gaps get caught and fixed immediately
-
-Path → Plan → Test → Compress → Repeat.
+signal-in-noise → learning-ladder → 20-hour-plan → study session → quiz-me / cheat-sheet / feynman-loop → next session → repeat

@@ -7,16 +7,17 @@ argument-hint: "What topic should the cheat sheet cover?"
 
 # One-Page Cheat Sheet
 
-Your brain remembers structure better than paragraphs.
-
 This skill compresses any topic into a single scannable page — perfect before an exam, meeting, interview, or real-world task.
 
-## Principles
+## Workflow
 
-- **Every line earns its place** — no filler
-- **Scannable, not readable** — headers, bullets, short phrases
-- **Under 500 words** — reviewable in 5 minutes
-- **Actionable** — includes quick-test questions to verify recall
+1. Ask what topic to compress (if not provided)
+2. Ask if there's a specific context (exam, interview, project)
+3. Generate the cheat sheet in the format below
+4. Verify it's under 500 words
+5. Offer to print or save as a reference file
+
+**Completion**: A cheat sheet under 500 words, scannable (headers + bullets + short phrases), with a 5-question quick test at the end.
 
 ## Output Format
 
@@ -45,11 +46,3 @@ This skill compresses any topic into a single scannable page — perfect before 
 4. [question]
 5. [question]
 ```
-
-## Workflow
-
-1. Ask what topic to compress (if not provided)
-2. Ask if there's a specific context (exam, interview, project)
-3. Generate the cheat sheet in the format above
-4. Verify it's under 500 words
-5. Offer to print or save as a reference file
