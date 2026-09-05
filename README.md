@@ -18,6 +18,12 @@
 | [`cheat-sheet`](skills/cheat-sheet/) | 将主题压缩为一页速查表 | "做个总结" |
 | [`feynman-loop`](skills/feynman-loop/) | 费曼技巧：用简单语言解释，发现缺口后重新教学 | "解释 X" |
 
+### 工程工具
+
+| 技能 | 说明 | 触发场景 |
+|------|------|----------|
+| [`scoped-commit`](skills/scoped-commit/) | 生成精简的 scoped commit message（scope 前置、无类型前缀，反对 Conventional Commits） | "写一个 commit"、"commit message"、/commit |
+
 <!-- 其他类别技能请按相同格式追加在此处 -->
 
 ## 目录结构
@@ -38,7 +44,9 @@ skills/
     │   └── SKILL.md
     ├── cheat-sheet/
     │   └── SKILL.md
-    └── feynman-loop/
+    ├── feynman-loop/
+    │   └── SKILL.md
+    └── scoped-commit/          # 工程工具
         └── SKILL.md
 ```
 
@@ -64,3 +72,10 @@ skills/
 - `SKILL.md` — 必需，frontmatter（name + description）+ 工作流指令
 - `references/` — 可选，详细参考资料
 - `scripts/` — 可选，确定性脚本
+
+## 参考来源
+
+| 来源 | 关联技能 | 用途 |
+|------|----------|------|
+| [caveman-commit 原型 skill](https://github.com/JuliusBrussee/caveman/blob/main/skills/caveman-commit/SKILL.md) | `scoped-commit` | 措辞风格与结构原型 |
+| [Stop Using Conventional Commits](https://sumnerevans.com/posts/software-engineering/stop-using-conventional-commits/) | `scoped-commit` | 核心理念：scope 前置、去 type 前缀 |
