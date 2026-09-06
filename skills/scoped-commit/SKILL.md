@@ -1,8 +1,7 @@
 ---
 name: scoped-commit
-description: >
-  Write a scoped commit message — scope first, terse, no type prefix.
-  Use for "write a commit", "commit message", /commit or /scoped-commit.
+description: "Write a scoped commit message — scope first, terse, no type prefix. Use for 'commit' or the /commit and /scoped-commit commands."
+disable-model-invocation: false
 ---
 
 Write commit messages terse and exact. Lead with the **scope** — the project area the change touches — not a type. Scope is the subject; type is redundant. Why over what.
