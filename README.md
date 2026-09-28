@@ -24,6 +24,12 @@
 |------|------|----------|
 | [`scoped-commit`](skills/scoped-commit/) | 生成精简的 scoped commit message（scope 前置、无类型前缀，反对 Conventional Commits） | "写一个 commit"、"commit message"、/commit |
 
+### 语言学习
+
+| 技能 | 说明 | 触发场景 |
+|------|------|----------|
+| [`comprehensible-english`](skills/comprehensible-english/) | 用英语解释难懂英文（转述 + 英文释义），末尾附译文 | `/comprehensible-english 这句什么意思` |
+
 <!-- 其他类别技能请按相同格式追加在此处 -->
 
 ## 目录结构
@@ -46,7 +52,9 @@ skills/
     │   └── SKILL.md
     ├── feynman-loop/
     │   └── SKILL.md
-    └── scoped-commit/          # 工程工具
+    ├── scoped-commit/          # 工程工具
+    │   └── SKILL.md
+    └── comprehensible-english/ # 语言学习
         └── SKILL.md
 ```
 
