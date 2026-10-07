@@ -23,6 +23,7 @@
 | 技能 | 说明 | 触发场景 |
 |------|------|----------|
 | [`scoped-commit`](skills/scoped-commit/) | 生成精简的 scoped commit message（scope 前置、无类型前缀，反对 Conventional Commits） | "写一个 commit"、"commit message"、/commit |
+| [`implement-and-review-loop`](skills/implement-and-review-loop/) | 实现 spec/tickets → 双轴 code-review → caveman-review 评审循环，直到某一轮无新问题（不自动提交） | "实现这个 spec"、"实现并审核循环"、/implement-and-review-loop |
 
 ### 语言学习
 
@@ -53,6 +54,8 @@ skills/
     ├── feynman-loop/
     │   └── SKILL.md
     ├── scoped-commit/          # 工程工具
+    │   └── SKILL.md
+    ├── implement-and-review-loop/ # 工程工具
     │   └── SKILL.md
     └── comprehensible-english/ # 语言学习
         └── SKILL.md
