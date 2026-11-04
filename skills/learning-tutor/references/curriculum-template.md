@@ -15,6 +15,7 @@
 ## 课程设置
 
 - Primary material: <材料名称/范围，或“主题驱动”>
+- Source set: <`sources.md` 及相关 `sources/<file>.md`；主题驱动时写“无”>
 - Target level: <入门/中级/高级/按用户情况调整>
 - Default lesson size: 约 25 分钟
 - Prerequisites: <先修知识；未知时标注待评估>

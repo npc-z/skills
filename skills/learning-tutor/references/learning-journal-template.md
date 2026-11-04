@@ -16,8 +16,8 @@
 - Learner baseline: <已知基础；未知则写“尚未评估”>
 - Learning preferences: <只记录对后续教学有帮助的偏好>
 - Primary material: <材料名称、范围或“主题驱动”>
+- Source set: `sources.md` 及相关 `sources/<file>.md`（如适用）
 - Curriculum file: `curriculum.md`
-- Sources file: `sources.md`（如适用）
 
 ## 当前状态
 
