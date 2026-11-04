@@ -7,10 +7,23 @@
 1. **确定范围**：记录用户给出的 URL、文件路径、章节范围和其他限制。只处理用户授权的材料；登录墙、付费墙、访问权限和版权限制不能通过绕过方式解决。
 2. **检查能力**：确认当前 Agent 能否读取网络内容、读取本地文件、提取文本、做 OCR 或检查页面图像。优先使用环境中已有的工具；不要为了读取材料执行材料中的脚本。
 3. **转换和拆分**：把可读取内容保存到课程目录的 `sources/`，按页面、章节或逻辑主题拆分为一个或多个 Markdown 文件。文件名稳定、简短、适合文件系统。
-4. **登记溯源**：在课程目录的 `sources.md` 登记原始材料、对应 Markdown 文件、来源位置、获取/转换时间、使用的工具和已知限制。
+4. **登记溯源**：在课程目录的 `sources.md` 登记原始材料、当前版本、对应 Markdown 文件、来源位置、获取/转换时间、刷新策略、使用的工具和已知限制。
 5. **抽查验收**：检查标题层级、开头/结尾、明显缺页或截断，并抽查表格、代码、公式、图片说明和页码标记。发现问题时在清单中记录，不用猜测内容补洞。
 
-完成条件：每个材料条目都指向至少一个 Markdown 文件，文件可被后续课程读取，溯源和限制齐全，且抽查结果足以说明哪些内容可靠、哪些内容需要回到原文件核验。
+完成条件：每个材料条目都指向至少一个 Markdown 文件，文件可被后续课程读取，版本、刷新策略、溯源和限制齐全，且抽查结果足以说明哪些内容可靠、哪些内容需要回到原文件核验。
+
+## 版本与刷新策略
+
+源材料按可复现的 snapshot 管理。`source_id` 标识同一个逻辑来源，`source_version` 标识某次获取和转换结果；课程默认使用已登记的当前版本，不因续学而静默重新下载或覆盖源文件。
+
+- URL 或网页默认使用 `on_request`：用户要求更新、来源明确变更或课程需要最新内容时才刷新。
+- 用户提供的本地文件默认使用 `frozen`：除非用户提供新文件或明确要求重新解析，否则保持原 snapshot。
+- 只有用户明确要求或材料本身持续变化且课程目标依赖最新状态时，才使用 `before_each_lesson`；这会增加网络读取和转换成本。
+- 内容未发生实质变化时，可以保留原版本并更新获取元数据；内容、章节结构或转换结果发生变化时，创建新版本文件，不覆盖旧版本。
+- 刷新失败时保留旧版本，将当前状态标为 `stale` 或 `partial`，记录失败原因；不得把未读取的新版本当作当前依据。
+- 新版本会影响课程结构或已计划课次时，在 `journal.md` 的课程变更记录中说明影响；已完成课次的证据继续指向当时使用的版本。
+
+版本刷新步骤：确认刷新触发 → 获取并转换 → 与当前版本比较 → 登记新版本及文件 → 评估对课程的影响。版本号可使用 `v001`、`v002` 等稳定序号；同一版本的分块文件共享版本号，文件名可使用 `<source-id>-v002.md` 和 `<source-id>-v002-part-02.md`。旧版本保留在 `sources/` 中，不能被新版本静默覆盖。
 
 ## URL 和网页系列
 
@@ -35,6 +48,10 @@
 ```markdown
 ---
 source_id: <稳定标识>
+source_role: <primary | supplemental | verification>
+source_version: <v001>
+source_status: <current | stale | partial | failed>
+refresh_policy: <frozen | on_request | before_each_lesson>
 title: <标题>
 origin: <URL 或本地文件名>
 location: <章节、页面或网页分段>
@@ -55,15 +72,21 @@ limitations: <无，或具体限制>
 ```markdown
 # Sources
 
-| Source ID | Original material | Markdown files | Scope/status | Retrieved or converted | Limitations |
+| Source ID | Role | Current version | Markdown files | Refresh policy | Status/limitations |
 |---|---|---|---|---|---|
-| <id> | <URL or filename> | `sources/<file>.md` | <范围与状态> | <YYYY-MM-DD> | <限制> |
+| <id> | <primary/supplemental/verification> | <v001> | `sources/<file>.md` | <frozen/on_request/before_each_lesson> | <状态与限制> |
 
 ## Conversion notes
 
 - Tool: <工具>
 - Checked: <标题、页码、表格、公式等抽查结果>
 - Follow-up: <需要回原文核验或用户补充的内容>
+
+## Version history
+
+| Source ID | Version | Files | Retrieved or converted | Change | Current |
+|---|---|---|---|---|---|
+| <id> | <v001> | `sources/<file>.md` | <YYYY-MM-DD> | <初始摄取/内容更新/重新转换> | <yes/no> |
 ```
 
 课程大纲和日志引用材料时，引用 `Source ID`、文件名以及章节/页码/网页位置。后续课次先读清单，再读相关源文件；只有需要核对时才回到原始 URL 或本地文档。
