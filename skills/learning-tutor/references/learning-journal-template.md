@@ -57,6 +57,8 @@
 - Mastery changes: <知识点等级变化及理由>
 - Review queue: <需复习的概念>
 - Resume checkpoint: <如未完成，记录精确续学位置>
+- Teaching adjustment: <保持 / 加速 / 加深 / 补先修 / 调整优先级，以及对应表现证据>
+- Question parking: <本节暂存的问题、何时处理；没有则写“无”>
 
 <!-- 每完成一节课追加一个记录，不要删除之前记录。 -->
 
